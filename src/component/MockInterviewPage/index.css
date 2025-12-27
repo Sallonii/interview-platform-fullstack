@@ -1,0 +1,58 @@
+.mock-interview-container{
+    background-color: #121212;
+    color: white;
+    height: 100vh;
+    padding: 20px;
+}
+.card-main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.course-heading{
+    margin-top: 100px;
+    margin-left: 50px;
+}
+.card-container{
+    width: 800px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.course-card{
+    border-style: solid;
+    border-color: white;
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.note-container{
+    border-style: solid;
+    border-color: white;
+
+    width: 750px;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 10px;
+}
+.start-mock-btn{
+    background-color: #4f46e5;
+  margin-top: 10px;
+  border: none;
+  color: white;
+  padding: 8px;
+  border-radius: 7px;
+  cursor: pointer;
+  width: 100px;
+}
+.start-mock-btn:hover{
+    background-color: transparent;
+  border-style: solid;
+  border-color: #4f46e5;
+}

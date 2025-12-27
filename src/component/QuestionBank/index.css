@@ -1,0 +1,66 @@
+.question-bank-container {
+  padding: 40px;
+  min-height:100vh;
+  border-style: solid;
+  border-color: wheat;
+  background-color: black;
+  color: white;
+}
+
+.questions-list {
+  list-style-type: none;
+  padding: 0;
+  color: black;
+}
+
+.question-card {
+  border: 1px solid #ddd;
+  border-color: rgb(184, 228, 228);
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 12px;
+  background-color: #fafafa;
+  display: flex;
+  justify-content: space-between;
+    align-items: center;
+}
+.question-info {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+.bookmark-button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.loader-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+.failure-view-jobs-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+}
+.retry-button {
+  background-color: #4f46e5;
+  margin-top: 10px;
+  border: none;
+  color: white;
+  padding: 8px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.retry-button:hover{
+  background-color: transparent;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #4f46e5;
+}

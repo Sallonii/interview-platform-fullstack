@@ -1,0 +1,53 @@
+.daily-challenge-container {
+  min-height: 97vh;
+  width: 98vw;
+  background-image: url("https://res.cloudinary.com/dwj8ezxgi/image/upload/v1766649755/ChatGPT_Image_Dec_25_2025_01_31_15_PM_nowuux.png");
+  background-size: cover;
+  background-position: center;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Poppins', 'Inter', sans-serif;
+  color: white;
+}
+
+.daily-challenge-heading{
+  color: white;
+  font-size: 32px;
+  margin-top: 150px;
+}
+hr{
+    width: 30%;
+    margin: 0;
+}
+.btn-container{
+    display: flex;
+    justify-content: space-around;
+    width: 300px;
+    margin-top: 30px;
+}
+
+.start-now-btn{
+  background-color: #443bf0ac;
+    border: none;
+    border-radius: 5px;
+    color: wheat;
+    padding: 10px 20px 10px 20px;
+    cursor: pointer;
+}
+.start-now-btn:hover{
+  background-color: #1b1767;
+}
+.solution-btn{
+    background-color: rgba(0, 128, 0, 0.434);
+    border: none;
+    border-radius: 5px;
+    color: wheat;
+    padding: 10px 20px 10px 20px;
+    cursor: pointer;
+}
+.solution-btn:hover{
+    background-color: green;
+}
