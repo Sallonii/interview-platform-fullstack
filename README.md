@@ -1,70 +1,126 @@
-# Getting Started with Create React App
+# 🎯 Interview Preparation Platform (Full Stack)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> A full-stack web application designed to help users prepare for technical interviews with question banks, mock interviews, bookmarking, and timed interview modes.
 
-## Available Scripts
+🔗 **Live Project URL**  
+> https://interview-platform-frontend-tawny.vercel.app/
 
-In the project directory, you can run:
+🔗 **GitHub Repository**  
+> https://github.com/Sallonii/interview-platform-fullstack.git
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🚀 Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+> This platform provides a complete interview preparation experience.
 
-### `npm test`
+- 🔐 User Authentication (Login / Signup)
+- 📚 Question Bank with difficulty levels and categories
+- ⭐ Bookmark important interview questions
+- ⏱️ Timed Mock Interview Mode
+- 🌐 REST API based backend
+- 💾 SQLite database integration
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🛠️ Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Frontend
+- React.js
+- React Router
+- CSS
+- Fetch API
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Backend
+- Node.js
+- Express.js
+- SQLite
+- CORS
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 📂 Project Structure
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+interview-platform-fullstack/
+│
+├── frontend/
+│ ├── src/
+│ ├── public/
+│ └── package.json
+│
+├── backend/
+│ ├── server.js
+│ ├── tech.db
+│ └── package.json
+│
+└── README.md
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## ⚙️ Installation & Setup
 
-## Learn More
+> Follow the steps below to run the project locally.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 1️⃣ Clone the Repository
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+git clone https://github.com/Sallonii/interview-platform-fullstack.git
+cd interview-platform-fullstack
+▶️ Backend Setup
 
-### Code Splitting
+Navigate to the backend folder and run:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+npm install
+node server.js
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+📍 Backend will run on:
 
-### Making a Progressive Web App
+http://localhost:3000
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+▶️ Frontend Setup
 
-### Advanced Configuration
+Navigate to the frontend folder and run:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+npm install
+npm start
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+📍 Frontend will run on:
 
-### `npm run build` fails to minify
+http://localhost:3000
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+📦 Build Command
+npm install
+
+🌍 Deployment
+
+Project deployment details:
+
+Frontend: Deployed on Vercel
+
+Backend: Node.js server with SQLite database
+
+📌 Future Enhancements
+
+Planned improvements for upcoming versions:
+
+Admin dashboard for managing questions
+
+Interview performance analytics
+
+User profile and progress tracking
+
+Dark / Light theme toggle
+
+👩‍💻 Author
+
+Saloni Chandra
+
+Aspiring Full Stack Developer
+Passionate about React, Node.js & building scalable applications
+
+⭐ Support
+
+If you find this project helpful, please consider giving it a ⭐ star on GitHub!
