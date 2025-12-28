@@ -39,25 +39,6 @@
 
 ---
 
-## 📂 Project Structure
-
-interview-platform-fullstack/
-│
-├── frontend/
-│ ├── src/
-│ ├── public/
-│ └── package.json
-│
-├── backend/
-│ ├── server.js
-│ ├── tech.db
-│ └── package.json
-│
-└── README.md
-
-
----
-
 ## ⚙️ Installation & Setup
 
 > Follow the steps below to run the project locally.
