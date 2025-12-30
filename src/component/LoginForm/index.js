@@ -24,6 +24,7 @@ class LoginForm extends Component {
     })
 
     history.replace('/')
+    
   }
 
   onLoginFailure = errorMessage => {
@@ -34,18 +35,22 @@ class LoginForm extends Component {
     event.preventDefault()
     const {username, password} = this.state
 
-    const apiUrl = 'https://apis.ccbp.in/login'
+    const apiUrl = 'http://localhost:3000/login'
     const userDetails = {username, password}
     const option = {
-      method: 'POST',
-      body: JSON.stringify(userDetails),
-    }
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(userDetails),
+}
 
     const response = await fetch(apiUrl, option)
     const data = await response.json()
+    console.log(data)
 
     if (response.ok === true) {
-      this.onLoginSuccess(data.jwt_token)
+      this.onLoginSuccess(data.token)
     } else {
       this.onLoginFailure(data.error_msg)
     }

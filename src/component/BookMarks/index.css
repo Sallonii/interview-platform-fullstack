@@ -2,5 +2,8 @@
     background-color: #121212;
     color: white;
     min-height: 100vh;
-    padding: 10px;
+    padding-top: 30px;
+}
+.bookmarks-title{
+    margin-top: 60px;
 }

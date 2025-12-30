@@ -2,6 +2,7 @@ import {Component} from 'react'
 import {Link} from 'react-router-dom'
 import Header from '../Header'
 import {TailSpin} from 'react-loader-spinner'
+import Cookies from 'js-cookie'
 import { FaBookmark, FaRegBookmark } from "react-icons/fa";
 import './index.css'
 
@@ -20,20 +21,42 @@ class QuestionBank extends Component{
 
   componentDidMount(){
     this.setState({questionStatus: questionBankConstant.inProgress})
-    fetch("https://interview-platform-backend-gnqj.onrender.com/question-bank")
-    .then(response => response.json())
+    const jwtToken = Cookies.get('jwt_token')
+    fetch("http://localhost:3000/question-bank", {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${jwtToken}`,
+      },
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Unauthorized')
+      }
+      return response.json()
+    })
     .then(data => {
-      this.setState({questions: data, questionStatus: questionBankConstant.success});
-    });
+      this.setState({
+        questions: data,
+        questionStatus: questionBankConstant.success,
+      })
+    })
+    .catch(() => {
+      this.setState({ questionStatus: questionBankConstant.failure })
+    })
   }
+
+
   onClickBookmark = async (id) => {
+    const jwtToken = Cookies.get("jwt_token")
   const response = await fetch(
-    `https://interview-platform-backend-gnqj.onrender.com/questions/${id}/bookmark`,
+    `http://localhost:3000/questions/${id}/bookmark`,
     {
       method: "PUT",
+      headers: {
+        Authorization: `Bearer ${jwtToken}`,
+      },
     }
   )
-
   const data = await response.json()
 
   this.setState(prevState => ({

@@ -1,5 +1,6 @@
 import {Component} from 'react'
 import Header from '../Header'
+import Cookies from 'js-cookie'
 import { FaBookmark, FaRegBookmark } from "react-icons/fa";
 import './index.css'
 
@@ -9,18 +10,32 @@ class BookMarks extends Component{
   } 
 
   componentDidMount(){
-    fetch("https://interview-platform-backend-gnqj.onrender.com/question-bank")
-    .then(response => response.json())
-    .then(data => {
-      this.setState({questions: data});
-    });
+    const jwtToken = Cookies.get('jwt_token')
+        console.log(jwtToken)
+        fetch("http://localhost:3000/question-bank", {
+          method: 'GET',
+          headers: {
+            Authorization: `Bearer ${jwtToken}`,
+          },
+        })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Unauthorized')
+          }
+          return response.json()
+        })
+        .then(data => {
+          this.setState({
+            questions: data,
+          })
+        })
   }
 
   onClickBookmark = async (id) => {
   const response = await fetch(
-    `https://interview-platform-backend-gnqj.onrender.com/questions/${id}/bookmark`,
+    `http://localhost:3000/questions/${id}/bookmark`,
     {
-      method: "PUT",
+      method: "PUT"
     }
   )
 
@@ -44,10 +59,10 @@ class BookMarks extends Component{
   return (
     <div className="bookmarks-container">
       <Header />
-      <h1>BookMarked Questions</h1>
+      <h1 className="bookmarks-title">BookMarked Questions</h1>
 
       {bookmarkedQuestions.length === 0 ? (
-        <p>Loading questions...</p>
+        <p>No BookMarks</p>
       ) : (
         <ul className="questions-list">
           {bookmarkedQuestions.map(question => (
