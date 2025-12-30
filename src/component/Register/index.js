@@ -1,12 +1,10 @@
 import {Component} from 'react'
-import {Redirect} from 'react-router-dom'
 
-import Cookies from 'js-cookie'
 
 import './index.css'
 
-class LoginForm extends Component {
-  state = {username: '', password: '', showError: false, errorMessage: ''}
+class Register extends Component {
+  state = {errorMessage: '', showError: false}
 
   onChangeUsername = event => {
     this.setState({username: event.target.value})
@@ -16,54 +14,31 @@ class LoginForm extends Component {
     this.setState({password: event.target.value})
   }
 
-  onLoginSuccess = jwtToken => {
-    const {history} = this.props
-
-    Cookies.set('jwt_token', jwtToken, {
-      expires: 30,
-    })
-
-    history.replace('/')
-    
-  }
-
-  onLoginFailure = errorMessage => {
-    this.setState({showError: true, errorMessage})
-  }
-
-  onLogin = async event => {
+  onRegister = async event => {
     event.preventDefault()
     const {username, password} = this.state
-
-    const apiUrl = 'http://localhost:3000/login'
+    const apiUrl = 'http://localhost:3000/register'
     const userDetails = {username, password}
     const option = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(userDetails),
-}
-
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(userDetails),
+    }   
     const response = await fetch(apiUrl, option)
     const data = await response.json()
-    console.log(data)
 
     if (response.ok === true) {
-      this.onLoginSuccess(data.token)
-    } else {
-      this.onLoginFailure(data.error_msg)
+      const {history} = this.props
+      history.replace('/login')
+    }else{
+      this.setState({showError: true, errorMessage: data.error_msg})
     }
   }
 
   render() {
     const {errorMessage, showError} = this.state
-
-    const jwtToken = Cookies.get('jwt_token')
-
-    if (jwtToken !== undefined) {
-      return <Redirect to="/" />
-    }
 
     return (
       <div className="bg-container">
@@ -82,7 +57,7 @@ class LoginForm extends Component {
           <h2>Practice • Improve • Get Hired</h2>
         </div>
         <div className='form-main-container'>
-          <form className="form-container" onSubmit={this.onLogin}>
+          <form className="form-container" onSubmit={this.onRegister}>
           <div className="input-container">
             <div className="input-item">
               <label htmlFor="username">USERNAME</label>
@@ -104,10 +79,10 @@ class LoginForm extends Component {
             </div>
           </div>
           <button type="submit" className="login-button">
-            Login
+            Register
           </button>
           {showError && <p className="error-message">{`*${errorMessage}`}</p>}
-          <a className="register-link" href="/register">Register</a>
+          <a className="login-link" href="/login">Login</a>
         </form>
         </div>
       </div>
@@ -115,4 +90,4 @@ class LoginForm extends Component {
   }
 }
 
-export default LoginForm
+export default Register

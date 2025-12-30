@@ -7,6 +7,7 @@ import BookMarks from './component/BookMarks'
 import MockInterviewPage from './component/MockInterviewPage'
 import MockInterview from './component/MockInterview'
 import DailyChallenge from './component/DailyChallenge'
+import Register from './component/Register'
 import './App.css';
 
 const App = () => (
@@ -14,6 +15,7 @@ const App = () => (
   <BrowserRouter>
     <Switch>
       <Route exact path='/login' component={LoginForm} />
+      <Route exact path='/register' component={Register} />
       <ProtectedRoute exact path="/" component={Home} />
       <ProtectedRoute exact path="/question-bank" component={QuestionBank} />
       <ProtectedRoute exact path="/bookmarks" component={BookMarks} />
