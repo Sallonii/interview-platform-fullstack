@@ -17,7 +17,7 @@ class Register extends Component {
   onRegister = async event => {
     event.preventDefault()
     const {username, password} = this.state
-    const apiUrl = 'http://localhost:3000/register'
+    const apiUrl = 'https://interview-platform-backend-gnqj.onrender.com/register'
     const userDetails = {username, password}
     const option = {
       method: 'POST',

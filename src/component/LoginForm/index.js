@@ -35,7 +35,7 @@ class LoginForm extends Component {
     event.preventDefault()
     const {username, password} = this.state
 
-    const apiUrl = 'http://localhost:3000/login'
+    const apiUrl = 'https://interview-platform-backend-gnqj.onrender.com/login'
     const userDetails = {username, password}
     const option = {
     method: 'POST',

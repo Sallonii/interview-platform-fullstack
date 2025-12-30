@@ -22,7 +22,7 @@ class QuestionBank extends Component{
   componentDidMount(){
     this.setState({questionStatus: questionBankConstant.inProgress})
     const jwtToken = Cookies.get('jwt_token')
-    fetch("http://localhost:3000/question-bank", {
+    fetch("https://interview-platform-backend-gnqj.onrender.com/question-bank", {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${jwtToken}`,
@@ -49,7 +49,7 @@ class QuestionBank extends Component{
   onClickBookmark = async (id) => {
     const jwtToken = Cookies.get("jwt_token")
   const response = await fetch(
-    `http://localhost:3000/questions/${id}/bookmark`,
+    `https://interview-platform-backend-gnqj.onrender.com/questions/${id}/bookmark`,
     {
       method: "PUT",
       headers: {
